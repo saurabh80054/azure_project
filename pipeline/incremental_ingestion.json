@@ -156,7 +156,7 @@
 							{
 								"name": "cdc",
 								"value": {
-									"value": "@activity('max_cdc').output.resulSets[0].rows[0].cdc",
+									"value": "@activity('max_cdc').output.resultSets[0].rows[0].cdc",
 									"type": "Expression"
 								}
 							}
@@ -171,12 +171,12 @@
 						}
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "JsonSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "ParquetWriteSettings"
+							"type": "JsonWriteSettings"
 						}
 					},
 					"enableStaging": false
@@ -194,7 +194,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "parquet_dynamic",
+						"referenceName": "json_dynamic",
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "landing-bronze",
